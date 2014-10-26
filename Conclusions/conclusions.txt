@@ -1,0 +1,10 @@
+Conclusions
+
+Using the default grid points and parameters, both the second and fourth order solver is able to price the put option fairly accurately compared to the theoretical Black-Scholes price. The option premiums at the initial time are plotted as a function of S_0 in the files soln_pent.png and soln_tri.png. The solution on all points of the 2-D grid is also plotted in the files soln_pent_3d.png and soln_pent_3d.png
+
+In the second-order model, the numerical price of the put option with S_0 = 100.0 is 14.4476852452.
+
+In the fourth-order model, the numerical price of the put option with S_0 = 100.0 is 14.4476783134.
+
+The difference between the numerical price and the theoretical price at the initial time is plotted in diff_tri1.png and diff_pent1.png. We see that most of the error is on the upper boundary of the grid. This is due to the fact that gamma at S_0 = 250 does not really vanish entirely, as we imposed in the boundary condition. To reduce this error, we extended S_max to 1000, while keeping the same number of grid points. The difference between the numerical and theoretical prices are plotted for the extended grid in diff_tri2.png and diff_pent2.png. Now we see that the majority of the error is located near S_0 = K, where the value of the option has the highest gamma. As expected, the error of the fourth order solution is smaller than the error of the second order solution.
+
